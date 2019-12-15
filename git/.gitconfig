@@ -1,5 +1,8 @@
 [user]
 	name = Anthony Rabbito
 	email = hello@anthonyrabbito.com
+	signingkey = A54D8FB506C103352E67737587CB975CFF2E7D8F
 [commit]
-	gpgsign = true
+	gpgSign = true
+[gpg]
+	program = gpg2
