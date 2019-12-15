@@ -1,0 +1,5 @@
+[user]
+	name = Anthony Rabbito
+	email = hello@anthonyrabbito.com
+[commit]
+	gpgsign = true
