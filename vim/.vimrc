@@ -17,8 +17,7 @@ Plugin 'kamykn/spelunker.vim'
 call vundle#end()            
 filetype plugin indent on
 
-set completefunc=emoji#complete
-
+set mouse-=a
 let g:vim_markdown_folding_disabled = 1
 set conceallevel=2
 let g:vim_markdown_strikethrough = 1
