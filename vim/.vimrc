@@ -2,7 +2,7 @@ set nocompatible
 filetype off                 
 
 
-set nospell
+set spell
 set mouse-=a
 set conceallevel=2
 
@@ -12,7 +12,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'jaredgorski/spacecamp'
-Plugin 'kamykn/spelunker.vim'
 call vundle#end()            
 filetype plugin indent on
 
