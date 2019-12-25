@@ -8,11 +8,9 @@ set nospell
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'rust-lang/rust.vim'
-Plugin 'shirk/vim-gas'
+Plug 'jaredgorski/spacecamp'
 Plugin 'kamykn/spelunker.vim'
 call vundle#end()            
 filetype plugin indent on
