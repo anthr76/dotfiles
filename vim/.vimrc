@@ -2,7 +2,7 @@ set nocompatible
 filetype off                 
 
 
-set spell
+set nospell
 set mouse-=a
 set conceallevel=2
 
