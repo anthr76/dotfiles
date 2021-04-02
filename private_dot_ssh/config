@@ -1,0 +1,14 @@
+Host *
+    PubkeyAcceptedKeyTypes +rsa-sha2-256,rsa-sha2-512
+
+Host 192.168.*.*
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+
+Host 10.136.*.*
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+
+Host 10.16.*.*
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
