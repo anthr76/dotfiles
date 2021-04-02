@@ -16,7 +16,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'stephpy/vim-yaml'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'junegunn/fzf.vim'
-
+Plugin 'Lilja/vim-chezmoi'
 
 Plugin 'pedrohdz/vim-yaml-folds'
 Plugin 'dense-analysis/ale'
