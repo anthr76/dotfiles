@@ -1,0 +1,5 @@
+{{ if ne .chezmoi.hostname "anthonys-fedora-workstation" -}}
+monitors.xml
+{{- end }}
+README.md
+LICENSE

@@ -1,4 +1,3 @@
-{{- if eq .chezmoi.hostname "anthonys-fedora-workstation" -}}
 <monitors version="2">
   <configuration>
     <logicalmonitor>
@@ -245,4 +244,3 @@
     </logicalmonitor>
   </configuration>
 </monitors>
-{{- end -}}
