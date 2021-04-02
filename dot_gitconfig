@@ -1,0 +1,16 @@
+[user]
+	name = anthr76
+	email = hello@anthonyrabbito.com
+	signingkey = A54D8FB506C103352E67737587CB975CFF2E7D8F
+[core]
+	editor = nvim
+[commit]
+	gpgsign = true
+[merge]
+	tool = vimdiff
+[status]
+	submoduleSummary = true
+[tag]
+	forceSignAnnotated = true
+[credential]
+	helper = "!f() { /home/anthony/.vscode-server/bin/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8/node /tmp/vscode-remote-containers-5307f0bb4337f8d66fc4e73daea884f942b286a6.js $*; }; f"
