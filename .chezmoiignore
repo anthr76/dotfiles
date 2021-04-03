@@ -1,5 +1,7 @@
-{{ if ne .chezmoi.hostname "anthonys-fedora-workstation" -}}
+
+{{ if ne .chezmoi.hostname "anthonys-fedora-workstation" }}
 .config/monitors.xml
-{{- end }}
+{{ end }}
+
 README.md
 LICENSE
