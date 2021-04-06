@@ -1,0 +1,47 @@
+[user]
+    {{- if (eq .personal "y") }}
+    name = anthr76
+    email = hello@anthonyrabbito.com
+    signingkey = A54D8FB506C103352E67737587CB975CFF2E7D8F
+    {{- else if (eq .work "y") }}
+    name = arabbito001
+    email = anthony.rabbito@pwc.com
+    signingkey: = 1DFB060053ACBC345763F28D3309F76E32F2C3DF
+    {{- end }}
+	
+[core]
+	editor = nvim
+[commit]
+	gpgsign = true
+[color]
+
+    # Use colors in Git commands that are capable of colored output when
+    # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+    ui = auto
+
+[color "branch"]
+
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+
+    meta = yellow bold
+    frag = magenta bold # line info
+    old = red # deletions
+    new = green # additions
+
+[color "status"]
+
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[merge]
+	tool = vimdiff
+    ff = only
+[status]
+	submoduleSummary = true
+[tag]
+	forceSignAnnotated = true
