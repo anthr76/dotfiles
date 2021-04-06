@@ -3,6 +3,10 @@
 .config/monitors.xml
 {{ end }}
 
+{{ if eq .work "y" }}
+.oh-my-zsh/custom/secrets.zsh
+{{ end }}
+
 README.md
 LICENSE
 install_chezmoi.sh
