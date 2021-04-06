@@ -7,7 +7,7 @@
 .oh-my-zsh/custom/secrets-personal.zsh
 {{ end }}
 
-{{ if eq .work "y" }}
+{{ if eq .personal "y" }}
 .oh-my-zsh/custom/secrets-work.zsh
 {{ end }}
 
