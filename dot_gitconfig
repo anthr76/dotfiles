@@ -33,6 +33,7 @@
 
 [merge]
 	tool = vimdiff
+    ff = only
 [status]
 	submoduleSummary = true
 [tag]
