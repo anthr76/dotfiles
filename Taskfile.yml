@@ -5,9 +5,57 @@ tasks:
   default:
     cmds:
       - task --list
-
   pretty:
     desc: fix errors
     cmds:
       - prettier --parser=markdown --write '*.md' '**/*.md' || true
       - prettier --parser=yaml --write '*.y*ml' '**/*.y*ml' || true
+  update-oh-my-zsh:
+    preconditions:
+     - bash: command -v "curl" >/dev/null 2>&1 ||
+       msg: "curl isn't installed"
+    desc: update oh-my-zsh
+    cmds:
+      - curl -s -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/upgrade.sh > upgrade.sh
+      - chmod +x upgrade.sh
+      - ./upgrade.sh
+      - rm upgrade.sh
+  install-oh-my-zsh:
+    preconditions:
+     - bash: command -v "curl" >/dev/null 2>&1 ||
+       msg: "curl isn't installed"
+    desc: install oh-my-zsh
+    cmds:
+      - curl -s -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh > upgrade.sh
+      - chmod +x upgrade.sh
+      - ./upgrade.sh
+      - rm upgrade.sh
+  install-vundle:
+    preconditions:
+     - bash: command -v "git" >/dev/null 2>&1 ||
+       msg: "git isn't installed"
+    desc: install latest vundle
+    cmds:
+      - git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  install-tpm:
+    preconditions:
+     - bash: command -v "git" >/dev/null 2>&1 ||
+       msg: "git isn't installed"
+    desc: install latest tpm
+    cmds:
+      - git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  update-tpm:
+    preconditions:
+     - bash: command -v "tmux" >/dev/null 2>&1 ||
+       msg: "git isn't installed"
+    desc: update tpm and it's plugins
+    cmds:
+      - ~/.tmux/plugins/tpm/bin/install_plugins
+  update-vundle:
+    desc: update vundle and its plugins
+    cmds:
+      - nvim +PluginInstall +qall
+  update-third-party:
+    deps: [update-oh-my-zsh, update-vundle, update-tpm]
+  install-third-party:
+    deps: [install-vundle, install-oh-my-zsh, install-tpm]
