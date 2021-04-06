@@ -38,5 +38,3 @@
 	submoduleSummary = true
 [tag]
 	forceSignAnnotated = true
-[credential]
-	helper = "!f() { /home/anthony/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/node /tmp/vscode-remote-containers-a66e1803c06f0595c5b03a97d4c19e11c418aad3.js $*; }; f"

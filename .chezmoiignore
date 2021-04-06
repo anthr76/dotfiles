@@ -4,7 +4,11 @@
 {{ end }}
 
 {{ if eq .work "y" }}
-.oh-my-zsh/custom/secrets.zsh
+.oh-my-zsh/custom/secrets-personal.zsh
+{{ end }}
+
+{{ if eq .work "y" }}
+.oh-my-zsh/custom/secrets-work.zsh
 {{ end }}
 
 README.md
