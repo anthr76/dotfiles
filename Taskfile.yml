@@ -1,0 +1,13 @@
+---
+version: "3"
+
+tasks:
+  default:
+    cmds:
+      - task --list
+
+  pretty:
+    desc: fix errors
+    cmds:
+      - prettier --parser=markdown --write '*.md' '**/*.md' || true
+      - prettier --parser=yaml --write '*.y*ml' '**/*.y*ml' || true
