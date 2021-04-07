@@ -45,6 +45,9 @@ tasks:
        msg: "git isn't installed"
     desc: update oh-my-zsh third party plugins
     cmds:
+      - git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions config pull.rebase true
+      - git -C git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search config pull.rebase true
+      - git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting config pull.rebase true
       - echo "zsh-autosuggestions" && git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions pull
       - echo "zsh-history-substring-search" && git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search pull
       - echo "zsh-syntax-highlighting" && git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting pull
@@ -75,6 +78,7 @@ tasks:
   update-vundle:
     desc: update vundle and its plugins
     cmds:
+      - git -C ~/.vim/bundle/Vundle.vim config pull.rebase true
       - git -C ~/.vim/bundle/Vundle.vim pull
       - nvim +PluginInstall +qall
   update-third-party:
