@@ -70,9 +70,8 @@ tasks:
        msg: "git isn't installed"
     desc: update tpm and it's plugins
     cmds:
+      - git -C ~/.tmux/plugins/tpm config pull.rebase true
       - git -C ~/.tmux/plugins/tpm pull
-      - tmux source-file ~/.tmux.conf
-      - ~/.tmux/plugins/tpm/bin/update_plugins all
   update-vundle:
     desc: update vundle and its plugins
     cmds:
