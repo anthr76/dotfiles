@@ -1,0 +1,6 @@
+{{ if (eq .chezmoi.os "darwin") }}
+# Don't use pinetry gui on mac
+pinentry-program /usr/local/bin/pinentry-curses
+{{ end }}
+default-cache-ttl 300
+max-cache-ttl 999999
