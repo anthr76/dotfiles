@@ -30,6 +30,24 @@ tasks:
       - chmod +x upgrade.sh
       - ./upgrade.sh
       - rm upgrade.sh
+  install-oh-my-zsh-third-party:
+    preconditions:
+     - bash: command -v "git" >/dev/null 2>&1 ||
+       msg: "git isn't installed"
+    desc: install oh-my-zsh third party plugins
+    cmds:
+      - git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+      - git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+      - git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  update-oh-my-zsh-third-party:
+    preconditions:
+     - bash: command -v "git" >/dev/null 2>&1 ||
+       msg: "git isn't installed"
+    desc: update oh-my-zsh third party plugins
+    cmds:
+      - echo "zsh-autosuggestions" && git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions pull
+      - echo "zsh-history-substring-search" && git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search pull
+      - echo "zsh-syntax-highlighting" && git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting pull
   install-vundle:
     preconditions:
      - bash: command -v "git" >/dev/null 2>&1 ||
@@ -44,18 +62,23 @@ tasks:
     desc: install latest tpm
     cmds:
       - git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+      - tmux source-file ~/.tmux.conf
+      - ~/.tmux/plugins/tpm/bin/install_plugins
   update-tpm:
     preconditions:
      - bash: command -v "tmux" >/dev/null 2>&1 ||
        msg: "git isn't installed"
     desc: update tpm and it's plugins
     cmds:
-      - ~/.tmux/plugins/tpm/bin/install_plugins
+      - git -C ~/.tmux/plugins/tpm pull
+      - tmux source-file ~/.tmux.conf
+      - ~/.tmux/plugins/tpm/bin/update_plugins all
   update-vundle:
     desc: update vundle and its plugins
     cmds:
+      - git -C ~/.vim/bundle/Vundle.vim pull
       - nvim +PluginInstall +qall
   update-third-party:
-    deps: [update-oh-my-zsh, update-vundle, update-tpm]
+    deps: [update-oh-my-zsh, update-vundle, update-tpm, update-oh-my-zsh-third-party]
   install-third-party:
-    deps: [install-vundle, install-oh-my-zsh, install-tpm]
+    deps: [install-vundle, install-oh-my-zsh, install-tpm, install-oh-my-zsh-third-party]
