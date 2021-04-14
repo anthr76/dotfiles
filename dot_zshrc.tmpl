@@ -127,6 +127,11 @@ alias gcfs="git commit -as && git push && flux reconcile ks flux-system --with-s
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
 
+alias butane='podman run --rm --tty --interactive \
+              --security-opt label=disable        \
+              --volume ${PWD}:/pwd --workdir /pwd \
+              quay.io/coreos/butane:release'
+
 {{ if (eq .chezmoi.os "darwin") }}
 # Don't know if this is useful on other OSes yet, but I need it on mac.
 export GPG_TTY=$(tty)
