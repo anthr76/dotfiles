@@ -136,3 +136,7 @@ alias butane='podman run --rm --tty --interactive \
 # Don't know if this is useful on other OSes yet, but I need it on mac.
 export GPG_TTY=$(tty)
 {{ end }}
+
+alias kubectl=kubecolor
+# make completion work with kubecolor
+compdef kubecolor=kubectl
