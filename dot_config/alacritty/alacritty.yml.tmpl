@@ -97,3 +97,9 @@ shell:
   program: /bin/zsh
   args:
     - --login
+
+{{ if (eq .chezmoi.os "darwin") }}
+key_bindings:
+  - { key: Right, mods: Alt, chars: "\x1BF" }
+  - { key: Left,  mods: Alt, chars: "\x1BB" }
+{{ end }}
