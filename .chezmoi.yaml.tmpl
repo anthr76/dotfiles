@@ -16,9 +16,8 @@ data:
 
 encryption: "gpg"
 gpg:
-  {{- if .personal }}
+  {{- if (eq .personal "true") }}
   recipient: "A54D8FB506C103352E67737587CB975CFF2E7D8F"
-  {{- end }}
-  {{- if .work }}
+  {{- else if (eq .work "true") }}
   recipient: "1DFB060053ACBC345763F28D3309F76E32F2C3DF"
   {{- end }}

@@ -1,9 +1,9 @@
 
-{{ if .work }}
+{{ if eq .work "true" }}
 .oh-my-zsh/custom/secrets-personal.zsh
 {{ end }}
 
-{{ if .personal }}
+{{ if eq .personal "true" }}
 .oh-my-zsh/custom/secrets-work.zsh
 {{ end }}
 
