@@ -83,5 +83,3 @@ tasks:
       - nvim +PluginInstall +qall
   update-third-party:
     deps: [update-oh-my-zsh, update-vundle, update-tpm, update-oh-my-zsh-third-party]
-  install-third-party:
-    deps: [install-vundle, install-oh-my-zsh, install-tpm, install-oh-my-zsh-third-party]
