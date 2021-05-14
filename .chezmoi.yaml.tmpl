@@ -1,7 +1,10 @@
 {{- $email := promptString "email" -}}
 {{- $name := promptString "name" -}}
-{{- $personal := promptString "Is this a personal device? (y/n)" -}}
-{{- $work := promptString "Is this a work device? (y/n)" -}}
+
+{{- $personal := false -}}{{/* true if this machine is personal */}}
+{{- $work := false -}}{{/* true if this machine is work */}}
+{{- $personal = promptBool "personal" -}}
+{{- $work = promptBool "work" -}}
 
 format: yaml
 
@@ -13,8 +16,8 @@ data:
 
 encryption: "gpg"
 gpg:
-  {{- if (eq .personal "y") }}
+  {{- if not $work }}
   recipient: "A54D8FB506C103352E67737587CB975CFF2E7D8F"
-  {{- else if (eq .work "y") }}
+  {{- else }}
   recipient: "1DFB060053ACBC345763F28D3309F76E32F2C3DF"
   {{- end }}
