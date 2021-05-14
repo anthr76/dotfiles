@@ -1,13 +1,9 @@
 
-{{ if ne .chezmoi.hostname "anthonys-fedora-workstation" }}
-.config/monitors.xml
-{{ end }}
-
-{{ if eq .work "y" }}
+{{ if .work }}
 .oh-my-zsh/custom/secrets-personal.zsh
 {{ end }}
 
-{{ if eq .personal "y" }}
+{{ if .personal }}
 .oh-my-zsh/custom/secrets-work.zsh
 {{ end }}
 
