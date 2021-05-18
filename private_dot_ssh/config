@@ -12,3 +12,7 @@ Host 10.136.*.*
 Host 10.16.*.*
   StrictHostKeyChecking no
   UserKnownHostsFile /dev/null
+
+Host aur.archlinux.org
+  IdentityFile ~/.ssh/aur
+  User aur
