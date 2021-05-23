@@ -109,13 +109,11 @@ alias pip="pip3"
 export FLUX_FORWARD_NAMESPACE=flux
 alias fghr="flux get helmreleases --verbose -A"
 alias cdd="cd ~/dev"
-export KUBECONFIG=$KUBECONFIG:$HOME/.kube/config:$HOME/.kube/configs/kubeconfig.yaml:/home/anthony/Documents/Devlopment/infra/clusters/kvm/terraform/configs/mercury-config:/home/anthony/Documents/Devlopment/infra/clusters/nwk1/terraform/configs/mercury-config:/home/anthony/Documents/Devlopment/infra/clusters/nwk1/terraform/configs/config
+export KUBECONFIG=$HOME/.kube/config:$HOME/.kube/nyc1.yaml:$HOME/.kube/nas.yaml
 
 alias kear="kustomize edit add resource **/*.yaml"
 alias sudo='nocorrect sudo -E '
 alias rootful='/usr/bin/sudo'
-#FLUX BUG
-#export KUBECONFIG=/home/anthony/Documents/Devlopment/infra/clusters/nwk1/terraform/configs/config.creds
 alias cookie_secret="cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1"
 alias gcfs="git commit -as && git push && flux reconcile ks flux-system --with-source --verbose"
 
