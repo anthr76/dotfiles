@@ -1,0 +1,24 @@
+startup = [
+    "alias k = kubecolor",
+    "alias vim = nvim",
+    ]
+
+disable_table_indexes = true
+# TODO: populate PATH per-session via config/*.sh
+# path = [
+#   "/usr/bin",
+#   "/usr/local/bin",
+# ]
+#prompt = "STARSHIP_SHELL= starship prompt"
+skip_welcome_message = true
+table_mode = "none"
+
+[env]
+# TODO: populate values per-session via config/*.sh
+#STARSHIP_SHELL = "nushell"
+
+[line_editor]
+completion_match_method = "case-insensitive"
+
+[textview]
+pager = "bat --decorations=never"
