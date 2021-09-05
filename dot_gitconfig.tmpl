@@ -1,6 +1,7 @@
 [user]
     {{- if (eq .personal "true") }}
-    name = anthr76
+    name = Anthony Rabbito
+    username = anthr76
     email = hello@anthonyrabbito.com
     signingkey = A54D8FB506C103352E67737587CB975CFF2E7D8F
     {{- else if (eq .work "true") }}
@@ -8,11 +9,12 @@
     email = anthony.rabbito@pwc.com
     signingkey = 1DFB060053ACBC345763F28D3309F76E32F2C3DF
     {{- end }}
-	
+
 [core]
-	editor = nvim
+    editor = nvim
 [commit]
-	gpgsign = true
+    gpgsign = true
+
 [color]
 
     # Use colors in Git commands that are capable of colored output when
@@ -37,11 +39,12 @@
     added = yellow
     changed = green
     untracked = cyan
-
 [merge]
-	tool = vimdiff
+    tool = vimdiff
     ff = only
 [status]
-	submoduleSummary = true
+    submoduleSummary = true
 [tag]
-	forceSignAnnotated = true
+    forceSignAnnotated = true
+[init]
+        defaultBranch = main

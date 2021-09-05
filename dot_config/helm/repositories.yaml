@@ -129,3 +129,11 @@ repositories:
   password: ""
   url: https://cloudflare.github.io/helm-charts
   username: ""
+- caFile: ""
+  certFile: ""
+  insecure_skip_tls_verify: false
+  keyFile: ""
+  name: renovate
+  password: ""
+  url: https://docs.renovatebot.com/helm-charts
+  username: ""
