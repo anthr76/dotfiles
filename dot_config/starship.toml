@@ -36,5 +36,10 @@ us-east-2 = "Ohio"
 us-west-1 = "N. California"
 us-west-2 = "Oregon"
 
+[kubernetes]
+symbol = "ﴱ "
+format = 'on [ﴱ $context \($namespace\)](bold bright-green) '
+disabled = false
+
 [git_branch]
 symbol = " "
