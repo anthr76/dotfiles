@@ -1,10 +1,12 @@
 
 {{ if eq .work "true" }}
 .oh-my-zsh/custom/secrets-personal.zsh
+.config/fish/conf.d/secrets-personal.fish
 {{ end }}
 
 {{ if eq .personal "true" }}
 .oh-my-zsh/custom/secrets-work.zsh
+.config/fish/conf.d/secrets-work.fish
 {{ end }}
 
 README.md
