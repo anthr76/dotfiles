@@ -1,4 +1,5 @@
 set -gx KUBE_EDITOR nvim
+set -gx KUBECONFIG $HOME/.kube/config
 set -gx VISUAL nvim
 set -gx EDITOR nvim
 
