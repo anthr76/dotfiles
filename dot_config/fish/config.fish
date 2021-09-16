@@ -3,6 +3,7 @@ set -gx KUBECONFIG $HOME/.kube/config
 set -gx VISUAL nvim
 set -gx EDITOR nvim
 set -gx GPG_TTY (tty)
+set -U fish_greeting
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
