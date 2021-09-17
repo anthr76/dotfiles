@@ -1,5 +1,5 @@
 function ls --wraps=lsd --description 'lsd shorthand'
-  if test -f lsd
+  if type -q lsd
       lsd $argv
   else
 {{- if (eq .chezmoi.os "linux") }}
