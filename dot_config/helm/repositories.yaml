@@ -137,3 +137,11 @@ repositories:
   password: ""
   url: https://docs.renovatebot.com/helm-charts
   username: ""
+- caFile: ""
+  certFile: ""
+  insecure_skip_tls_verify: false
+  keyFile: ""
+  name: minio
+  password: ""
+  url: https://charts.min.io/
+  username: ""
