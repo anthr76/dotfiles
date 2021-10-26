@@ -10,54 +10,33 @@ tasks:
     cmds:
       - prettier --parser=markdown --write '*.md' '**/*.md' || true
       - prettier --parser=yaml --write '*.y*ml' '**/*.y*ml' || true
-  update-oh-my-zsh:
+  install-fisher:
+    preconditions:
+     - bash: command -v "fish" >/dev/null 2>&1 ||
+       msg: "fish isn't installed"
+    desc: install fisher
+    cmds:
+      - type fisher &>/dev/null || curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+  install-fisher-third-party:
+    desc: install fish third party plugins
+    cmds:
+      - fisher install danhper/fish-ssh-agent
+      - fisher install decors/fish-colored-man
+      - fisher install edc/bass
+      - fisher install evanlucas/fish-kubectl-completions
+      - fisher install franciscolourenco/done
+      - fisher install jethrokuan/z
+      - fisher install jorgebucaran/spark.fish
+      - fisher install oh-my-fish/plugin-bang-bang
+      - fisher install patrickf3139/fzf.fish
+      - fisher install wfxr/forgit
+  install-vim-plug:
     preconditions:
      - bash: command -v "curl" >/dev/null 2>&1 ||
        msg: "curl isn't installed"
-    desc: update oh-my-zsh
-    cmds:
-      - curl -s -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/upgrade.sh > upgrade.sh
-      - chmod +x upgrade.sh
-      - ./upgrade.sh
-      - rm upgrade.sh
-  install-oh-my-zsh:
-    preconditions:
-     - bash: command -v "curl" >/dev/null 2>&1 ||
-       msg: "curl isn't installed"
-    desc: install oh-my-zsh
-    cmds:
-      - curl -s -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh > upgrade.sh
-      - chmod +x upgrade.sh
-      - ./upgrade.sh
-      - rm upgrade.sh
-  install-oh-my-zsh-third-party:
-    preconditions:
-     - bash: command -v "git" >/dev/null 2>&1 ||
-       msg: "git isn't installed"
-    desc: install oh-my-zsh third party plugins
-    cmds:
-      - git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-      - git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
-      - git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-  update-oh-my-zsh-third-party:
-    preconditions:
-     - bash: command -v "git" >/dev/null 2>&1 ||
-       msg: "git isn't installed"
-    desc: update oh-my-zsh third party plugins
-    cmds:
-      - git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions config pull.rebase true
-      - git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search config pull.rebase true
-      - git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting config pull.rebase true
-      - echo "zsh-autosuggestions" && git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions pull
-      - echo "zsh-history-substring-search" && git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search pull
-      - echo "zsh-syntax-highlighting" && git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting pull
-  install-vundle:
-    preconditions:
-     - bash: command -v "git" >/dev/null 2>&1 ||
-       msg: "git isn't installed"
     desc: install latest vundle
     cmds:
-      - git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+      - curl -fLo ~/.config/.nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   install-tpm:
     preconditions:
      - bash: command -v "git" >/dev/null 2>&1 ||
@@ -75,11 +54,3 @@ tasks:
     cmds:
       - git -C ~/.tmux/plugins/tpm config pull.rebase true
       - git -C ~/.tmux/plugins/tpm pull
-  update-vundle:
-    desc: update vundle and its plugins
-    cmds:
-      - git -C ~/.vim/bundle/Vundle.vim config pull.rebase true
-      - git -C ~/.vim/bundle/Vundle.vim pull
-      - nvim +PluginInstall +qall
-  update-third-party:
-    deps: [update-oh-my-zsh, update-vundle, update-tpm, update-oh-my-zsh-third-party]
