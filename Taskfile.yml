@@ -20,16 +20,16 @@ tasks:
   install-fisher-third-party:
     desc: install fish third party plugins
     cmds:
-      - fisher install danhper/fish-ssh-agent
-      - fisher install decors/fish-colored-man
-      - fisher install edc/bass
-      - fisher install evanlucas/fish-kubectl-completions
-      - fisher install franciscolourenco/done
-      - fisher install jethrokuan/z
-      - fisher install jorgebucaran/spark.fish
-      - fisher install oh-my-fish/plugin-bang-bang
-      - fisher install patrickf3139/fzf.fish
-      - fisher install wfxr/forgit
+      - fish -c "fisher install danhper/fish-ssh-agent"
+      - fish -c "fisher install decors/fish-colored-man"
+      - fish -c "fisher install edc/bass"
+      - fish -c "fisher install evanlucas/fish-kubectl-completions"
+      - fish -c "fisher install franciscolourenco/done"
+      - fish -c "fisher install jethrokuan/z"
+      - fish -c "fisher install jorgebucaran/spark.fish"
+      - fish -c "fisher install oh-my-fish/plugin-bang-bang"
+      - fish -c "fisher install patrickf3139/fzf.fish"
+      - fish -c "fisher install wfxr/forgit"
   install-vim-plug:
     preconditions:
      - bash: command -v "curl" >/dev/null 2>&1 ||
