@@ -14,10 +14,11 @@ data:
   personal: "{{ $personal }}"
   work: "{{ $work }}"
 
-encryption: "gpg"
+
 gpg:
   {{- if .personal }}
   recipient: "A54D8FB506C103352E67737587CB975CFF2E7D8F"
-  {{- else if .work }}
+  {{- end}}
+  {{- if .work }}
   recipient: ""
   {{- end }}
