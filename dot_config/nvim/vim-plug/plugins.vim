@@ -50,3 +50,4 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 		" LSP
 		endif
 call plug#end()
+
