@@ -43,3 +43,6 @@ disabled = false
 
 [git_branch]
 symbol = " "
+
+[time]
+format = '\[[$time]($style)\]'
