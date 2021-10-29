@@ -6,9 +6,3 @@ Host *
 Host aur.archlinux.org
   IdentityFile ~/.ssh/aur
   User aur
-
-{{ if .work }}
-Host github.com
-  IdentitiesOnly yes
-  IdentityFile ~/.ssh/id_rsa_yubikey.pub
-{{ end }}
