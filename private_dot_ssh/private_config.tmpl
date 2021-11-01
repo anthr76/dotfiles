@@ -2,6 +2,10 @@ Host *
   ControlMaster auto
   ControlPath ~/.ssh/control-%h-%p-%r
   ControlPersist 600
+  {{- if .work }}
+  IdentityFile ~/.ssh/id_rsa_yubikey.pub
+  PKCS11Provider /usr/lib64/libykcs11.so
+  {{- end }}
 
 Host aur.archlinux.org
   IdentityFile ~/.ssh/aur
