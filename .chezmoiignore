@@ -4,7 +4,6 @@
 
 {{ if eq .personal "true" }}
 .config/fish/conf.d/secrets-work.fish
-~/.pam_environment
 {{ end }}
 
 README.md
