@@ -8,7 +8,7 @@ set -gx PY_COLORS true
 set -gx MAK_MOLECULE_DRIVER podman
 set -U fish_greeting
 
-{{ if .personal }}
+{{ if (eq .personal "true") }}
 set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 {{ end }}

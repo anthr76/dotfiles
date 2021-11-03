@@ -2,7 +2,7 @@ Host *
   ControlMaster auto
   ControlPath ~/.ssh/control-%h-%p-%r
   ControlPersist 600
-  {{- if .work }}
+  {{ if (eq .work "true") }}
   IdentityFile ~/.ssh/id_rsa_yubikey.pub
   PKCS11Provider /usr/lib64/libykcs11.so
   {{- end }}
