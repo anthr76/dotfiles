@@ -1,22 +1,11 @@
 add_newline = true
 
-format = """\
-  $username\
-  $directory\
-  $kubernetes\
-  $aws\
-  $git_branch\
-  $git_state\
-  $git_status\
-  $character\
-  """
-
 [character]
 success_symbol = "\n[❯](bold green)"
 error_symbol = "\n[✖](bold red)"
 
 [cmd_duration]
-min_time = 500
+format = '\[[⏱ $duration ]($style)\]'
 
 [directory]
 truncation_length = 5
@@ -26,23 +15,21 @@ truncate_to_repo = true
 show_always = false
 
 [aws]
-format = "on [$symbol$profile( $region)]($style) "
-style = "bold Yellow"
-symbol = "☁️ "
+format = 'on [$symbol$profile( $region)]($style) '
+style = 'bold Yellow'
+symbol = '☁️ '
 
 [aws.region_aliases]
-us-east-1 = "N. Virginia"
-us-east-2 = "Ohio"
-us-west-1 = "N. California"
-us-west-2 = "Oregon"
+us-east-1 = 'N. Virginia'
+us-east-2 = 'Ohio'
+us-west-1 = 'N. California'
+us-west-2 = 'Oregon'
 
 [kubernetes]
-symbol = "ﴱ "
+symbol = 'ﴱ '
 format = 'on [ﴱ $context \($namespace\)](bold bright-green) '
 disabled = false
 
 [git_branch]
-symbol = " "
+symbol = ' '
 
-[time]
-format = '\[[$time]($style)\]'
