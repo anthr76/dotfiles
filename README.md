@@ -14,7 +14,7 @@ Getting sway on top of KDE setup:
 
 ```
 rpm-ostree install \
-alacritty brightnessctl fira-code-fons network-manager-applet playerctl sway sway-systemd
+alacritty brightnessctl fira-code-fons network-manager-applet playerctl sway sway-systemd mako
 
 
 systemctl enable nm-applet.service && org.kwallet.service
