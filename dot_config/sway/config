@@ -198,7 +198,7 @@ mode "resize" {
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
 
-    # Return to default mode
+# Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -222,9 +222,15 @@ bar {
     }
 }
 
-# Special Keys
+# Special Keys, the idea is to install a min set of packages on silverblue
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 bindsym XF86AudioMute exec amixer set Master +1 toggle
+bindsym XF86AudioMicMute exec amixer set Capture +1 toggle
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 include /etc/sway/config.d/*
