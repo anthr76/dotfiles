@@ -1,0 +1,2 @@
+#!/bin/bash
+SHELL=fish toolbox enter boombox-arch

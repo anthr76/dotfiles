@@ -71,7 +71,7 @@ input "type:touchpad" {
     # Start a terminal
     bindsym $mod+Shift+Return exec $term
     # Start a toolbox-terminal
-    bindsym $mod+Return exec $term -e toolbox enter boombox-arch
+    bindsym $mod+Return exec $term --command ~/.local/bin/alacritty-toolbox
 
     # Kill focused window
     bindsym $mod+Shift+q kill
