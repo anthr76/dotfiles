@@ -1,0 +1,12 @@
+[Unit]
+Description=Unlock pam kwallet session
+After=sway-session.target
+PartOf=sway-session.target
+
+[Service]
+Type=dbus
+BusName=org.kde.kwalletd5
+ExecStart=/usr/libexec/pam_kwallet_init
+
+[Install]
+WantedBy=sway-session.target
