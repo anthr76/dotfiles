@@ -30,6 +30,23 @@ output * bg /usr/share/backgrounds/default.png fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
+# Left Monitor
+output "DP-1" {
+  pos 0 0 
+  mode 2560x1440@60Hz
+}
+# Middle Monitor
+output "HDMI-A-1" {
+	pos 2560 0
+	mode 2560x1440@60Hz
+}
+# Right Monitor
+output "DP-2" {
+  pos 5120 0 
+  mode 2560x1440@60Hz
+  transform 270
+}
+
 ### Idle configuration
 #
 # Example configuration:
@@ -72,6 +89,9 @@ input "type:touchpad" {
     bindsym $mod+Shift+Return exec $term
     # Start a toolbox-terminal
     bindsym $mod+Return exec $term --command ~/.local/bin/alacritty-toolbox
+
+    # lock and sleep
+    bindsym $mod+Shift+Escape exec 'swaylock -c 000000'
 
     # Kill focused window
     bindsym $mod+Shift+q kill
