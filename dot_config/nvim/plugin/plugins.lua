@@ -36,6 +36,7 @@ return require("packer").startup(function(use)
 	-- Vimwiki
 	use({ "vimwiki/vimwiki", opt = true })
 
+
 	-- Which Key, But better
 	use({
 		"folke/which-key.nvim",
@@ -78,8 +79,11 @@ return require("packer").startup(function(use)
 	-- Tmux easypane
 	use({ "christoomey/vim-tmux-navigator" })
 
-	-- NORD
-	use({ "arcticicestudio/nord-vim" })
+	-- dark
+  use "lunarvim/darkplus.nvim"
+
+	-- puppet
+  use "rodjek/vim-puppet"
 
 	-- New Commenting Plugin
 	use({

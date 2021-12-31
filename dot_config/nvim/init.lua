@@ -3,6 +3,8 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldminlines = 15
 
+vim.cmd ("colorscheme darkplus")
+
 -- Keybindings
 
 local keymap = vim.api.nvim_set_keymap
