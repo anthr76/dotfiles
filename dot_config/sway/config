@@ -31,21 +31,23 @@ output * bg /usr/share/backgrounds/default.png fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 # Left Monitor
-output "DP-1" {
+output "DP-3" {
   pos 0 0 
-  mode 2560x1440@60Hz
+  mode 2560x1440@144.078Hz
 }
 # Middle Monitor
-output "HDMI-A-1" {
+output "DP-1" {
 	pos 2560 0
-	mode 2560x1440@60Hz
+	mode 2560x1440@144.078Hz
 }
 # Right Monitor
 output "DP-2" {
   pos 5120 0 
-  mode 2560x1440@60Hz
+  mode 2560x1440@144.078Hz
   transform 270
 }
+
+font pango: FiraCode Nerd Font Mono Retina 10
 
 ### Idle configuration
 #
@@ -85,10 +87,13 @@ input "type:touchpad" {
 #
 # Basics:
 #
-    # Start a terminal
-    bindsym $mod+Shift+Return exec $term
-    # Start a toolbox-terminal
-    bindsym $mod+Return exec $term --command ~/.local/bin/alacritty-toolbox
+    # Start a terminal in the current working directory.
+    bindsym $mod+Shift+Return exec $term \
+		  --working-directory $(readlink /proc/$(ps --no-headers --ppid $(swaymsg -t get_tree \
+			| jq '.. | select(.focused?==true) | .pid') | awk '{print $1}')/cwd || echo $HOME) \
+    # Start a toolbox-terminal in the current working directory.
+    bindsym $mod+Return exec $term \
+      --command ~/.local/bin/alacritty-toolbox
 
     # lock and sleep
     bindsym $mod+Shift+Escape exec 'swaylock -c 000000'
