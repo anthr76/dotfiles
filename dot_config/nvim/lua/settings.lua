@@ -18,6 +18,7 @@ vim.o.backspace      = 'indent,eol,start' -- Backspace deletes across lines and 
 vim.o.history        = 100                -- History size
 vim.o.matchpairs     = '(:),{:},[:],<:>'  -- Characters that form pairs
 vim.o.completeopt    = 'menu,menuone,noselect'
+vim.o.clipboard      = 'unnamedplus'      -- Sets the clipboard
 
 -------------------------------------------------------------------------------
 --Spaces & Tabs
