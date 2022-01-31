@@ -1,0 +1,6 @@
+Host *
+  PKCS11Provider /usr/lib64/libykcs11.so
+
+Host aur.archlinux.org
+  IdentityFile ~/.ssh/aur
+  User aur
