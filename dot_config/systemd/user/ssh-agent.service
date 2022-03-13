@@ -1,12 +1,16 @@
 [Unit]
 Description=SSH key agent
+Requires=ssh-agent.socket
 
 [Service]
 Type=simple
 Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
+Environment=SSH_AGENT_PID=$MAINPID
 # DISPLAY required for ssh-askpass to work
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/ssh-agent -P '/usr/lib/*, /usr/lib64/*' -D -a $SSH_AUTH_SOCK
+ExecStart=/usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
+ExecStop=SSH_AGENT_PID=$MAINPID /usr/bin/ssh-agent -k
 
 [Install]
-WantedBy=default.target
+Also=ssh-agent.socket
+WantedBy=sway-session.target

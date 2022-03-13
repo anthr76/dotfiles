@@ -1,0 +1,12 @@
+[Unit]
+Description=SSH key agent
+
+[Socket]
+Priority=6
+Backlog=5
+ListenStream=%t/ssh-agent.socket
+DirectoryMode=0700
+
+[Install]
+WantedBy=sockets.target
+

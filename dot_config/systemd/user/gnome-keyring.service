@@ -1,0 +1,15 @@
+[Unit]
+Description=GNOME Keyring daemon
+Before=ssh-agent.service
+Requires=gnome-keyring.socket
+
+[Service]
+Type=simple
+StandardError=journal
+ExecStart=/usr/bin/gnome-keyring-daemon --components=pkcs11,secrets --foreground --control-directory=%t/keyring
+Restart=on-failure
+
+[Install]
+Also=gnome-keyring.socket
+WantedBy=sway-session.target
+
