@@ -8,8 +8,10 @@ Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
 Environment=SSH_AGENT_PID=$MAINPID
 # DISPLAY required for ssh-askpass to work
 Environment=DISPLAY=:0
+ExecStartPre=/usr/bin/rm -f $SSH_AUTH_SOCK
 ExecStart=/usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
 ExecStop=SSH_AGENT_PID=$MAINPID /usr/bin/ssh-agent -k
+Restart=on-failure
 
 [Install]
 Also=ssh-agent.socket
