@@ -1,0 +1,16 @@
+#
+profile {
+        output "eDP-1" disable
+        output "Unknown NX-EDG27  NIX27F17" position 0,0 mode 2560x1440@144.078Hz
+}
+
+profile {
+        output eDP-1 enable
+}
+#Work
+profile {
+        output eDP-1 disable
+        output "DP-4" position 1920,0 mode 1920x1200@59.950Hz
+        output "DP-5" position 0,0 mode 1920x1200@59.950Hz
+}
+

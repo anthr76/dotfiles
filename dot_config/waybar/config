@@ -1,0 +1,52 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+
+    "modules-left": [ "sway/workspaces", "sway/mode" ],
+    "modules-center": [ "sway/window" ],
+    "modules-right": [ "memory", "cpu", "tray", "battery", "clock" ],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 12
+    },
+
+    "memory": {
+        "format": "{percentage:3}% ",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+    "cpu": {
+        "format": "{usage:3}% ",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-charging": " {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "on-click": "notify-send -u low -t 3000 'Battery Status' \"$(acpi)\""
+    },
+
+    "clock": {
+        "format-alt": "{:%A, %B %d}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    }
+}
