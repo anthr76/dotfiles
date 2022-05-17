@@ -95,10 +95,16 @@ cmp.setup.cmdline(':', {
 local nvim_lsp = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local servers = { 'ansiblels', 'bashls', 'dockerls', 'jsonls', 'gopls', 'puppet', 'terraformls', 'yamlls' }
+local servers = { 'ansiblels', 'bashls', 'dockerls', 'gopls', 'puppet', 'terraformls', 'yamlls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup{ capabilities = capabilities }
 end
+
+nvim_lsp.jsonls.setup{
+    capabilities = capabilities,
+    cmd = { "vscode-json-languageserver", "--stdio" }
+}
+-- TODO: Figure out how to do multidimensional array in Lua to see if it's worth simplifying or being verbose in LSP setup
 -- TODO: Add efm language server setup.  This is a general LS that can be used for many improvements
 --   This may require making the lua table (servers) have more info
 

@@ -1,3 +1,10 @@
+# systemd env sometimes doesn't make it to the toolbox
+for line in (systemctl --user show-environment)
+    set key (echo "$line" | cut -d '=' -f 1)
+    set value (echo "$line" | cut -d '=' -f 2-)
+    set -g -x "$key" "$value"
+end
+
 set -gx KUBECONFIG $HOME/.kube/config
 set -gx GPG_TTY (tty)
 set -gx ANSIBLE_FORCE_COLOR true
