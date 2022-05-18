@@ -5,7 +5,7 @@ profile {
 }
 
 profile {
-        output eDP-1 enable
+        output "Unknown 0x4154 0x00000000" enable scale 1.7
 }
 #Work
 profile {
