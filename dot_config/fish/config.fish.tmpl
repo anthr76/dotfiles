@@ -12,9 +12,9 @@ set -gx PY_COLORS true
 set -gx MOLECULE_DRIVER_NAME podman
 set -U fish_greeting
 
-
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
 starship init fish | source
+zoxide init fish | source
