@@ -1,0 +1,13 @@
+[Unit]
+Description=Polkit GUI agent.
+PartOf=sway-session.target
+Requires=sway-session.target
+After=sway-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/lxpolkit
+Restart=always
+
+[Install]
+WantedBy=sway-session.target
