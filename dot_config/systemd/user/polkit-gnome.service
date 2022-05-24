@@ -1,12 +1,12 @@
 [Unit]
-Description=Polkit GUI agent.
+Description=Gnome PolicyKit agent.
 PartOf=sway-session.target
 Requires=sway-session.target
 After=sway-session.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/lxpolkit
+ExecStart=/usr/libexec/polkit-gnome-authentication-agent-1
 Restart=always
 
 [Install]
