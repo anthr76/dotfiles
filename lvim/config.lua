@@ -14,7 +14,7 @@ lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
 lvim.transparent_window = true
 -- HACK https://github.com/LunarVim/LunarVim/issues/2986
-vim.opt.title = false
+-- vim.opt.title = false
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
