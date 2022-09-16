@@ -1,0 +1,23 @@
+{{- $email := promptString "email" -}}
+{{- $name := promptString "name" -}}
+
+{{- $personal := false -}}{{/* true if this machine is personal */}}
+{{- $work := false -}}{{/* true if this machine is work */}}
+{{- $personal = promptBool "personal" -}}
+{{- $work = promptBool "work" -}}
+
+format: yaml
+
+data:
+  name: "{{ $name }}"
+  email: "{{ $email }}"
+  personal: "{{ $personal }}"
+  work: "{{ $work }}"
+
+encryption: "gpg"
+gpg:
+  {{- if .personal }}
+  recipient: "A54D8FB506C103352E67737587CB975CFF2E7D8F"
+  {{- else if .work }}
+  recipient: "424DAC29D70EBC87B821521D7F91162E408EBBD0"
+  {{- end }}

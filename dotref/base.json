@@ -1,0 +1,24 @@
+{
+  "vars": {
+    "git_profile": "foo"
+  },
+  "create": [
+    {
+      "name": "~/.config/git"
+    }
+  ],
+  "link": [
+    {
+      "src": "sway",
+      "dst": "~/.config/sway"
+    },
+    {
+      "src": "lvim/config.lua",
+      "dst": "~/.config/lvim/config.lua"
+    },
+    {
+      "src": "foot",
+      "dst": "~/.config/foot"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{{ if eq .work "true" }}
+.config/fish/conf.d/secrets-personal.fish
+{{ end }}
+
+{{ if eq .personal "true" }}
+.config/fish/conf.d/secrets-work.fish
+{{ end }}
+
+README.md
+LICENSE
+install_chezmoi.sh
+Taskfile.yml
