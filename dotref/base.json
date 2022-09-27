@@ -38,6 +38,10 @@
     {
       "src": "container-bin",
       "dst": "~/.local/container-bin"
+    },
+    {
+      "src": "environment.d",
+      "dst": "~/.config/environment.d"
     }
   ]
 }
