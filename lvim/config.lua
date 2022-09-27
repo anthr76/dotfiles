@@ -171,6 +171,11 @@ lvim.builtin.treesitter.highlight.enable = true
 --     },
 -- }
 
+lvim.plugins = {
+  { "NoahTheDuke/vim-just" },
+  { "IndianBoy42/tree-sitter-just" },
+}
+
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   pattern = { "*.json", "*.jsonc" },
