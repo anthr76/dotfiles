@@ -42,6 +42,10 @@
     {
       "src": "environment.d",
       "dst": "~/.config/environment.d"
+    },
+    {
+      "src": "ssh/config",
+      "dst": "~/.ssh/config"
     }
   ]
 }

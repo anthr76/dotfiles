@@ -1,0 +1,7 @@
+Host *
+  PKCS11Provider /usr/lib64/libykcs11.so
+  AddKeysToAgent yes
+  SendEnv TERM=xterm
+
+Host aur.archlinux.org
+  User aur
