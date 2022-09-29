@@ -1,7 +1,13 @@
 #!/bin/bash
 if [ -f /run/.containerenv ]; then
-    podman-remote run --rm -it --entrypoint=jira -v ~/.netrc:/root/.netrc -v ~/.config/.jira:/root/.config/.jira ghcr.io/ankitpokhrel/jira-cli:latest "$@"
+    podman-remote run --rm -it -e JIRA_AUTH_TYPE=bearer \
+      -e JIRA_API_TOKEN=$JIRA_API_TOKEN \
+      --entrypoint=jira -v ~/.netrc:/root/.netrc:z \
+      -v ~/.config/.jira/:/root/.config/.jira/:z ghcr.io/ankitpokhrel/jira-cli:latest "$@"
 else 
-    podman run --rm -it --entrypoint=jira -v ~/.netrc:/root/.netrc -v ~/.config/.jira:/root/.config/.jira ghcr.io/ankitpokhrel/jira-cli:latest "$@"
+    podman run --rm -it -e JIRA_AUTH_TYPE=bearer \
+      -e JIRA_API_TOKEN=$JIRA_API_TOKEN \
+      --entrypoint=jira -v ~/.netrc:/root/.netrc:z \
+      -v ~/.config/.jira/:/root/.config/.jira/:z ghcr.io/ankitpokhrel/jira-cli:latest "$@"
 fi
 
