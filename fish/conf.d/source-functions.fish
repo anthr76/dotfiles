@@ -1,1 +1,1 @@
-set -a fish_function_path $HOME/.config/fish/dotfiles/functions
+set -p fish_function_path $HOME/.config/fish/dotfiles/functions
